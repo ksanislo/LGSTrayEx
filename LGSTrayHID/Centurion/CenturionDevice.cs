@@ -364,7 +364,7 @@ public class CenturionDevice : IDisposable
             return;
         }
 
-        if (frame.FeatIdx == _bridgeIdx && frame.FuncId == 0x00)
+        if (_bridgeIdx != 0xFF && frame.FeatIdx == _bridgeIdx && frame.FuncId == 0x00)
             await HandleBridgeConnectionEvent(frame);
     }
 
